@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Seminar Proposal - Muhammad Hafiz</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syncopate:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS MASTER - OPTIMIZED FOR MOBILE */
+        :root {
+            --dark: #0b0e11; 
+            --navy: #1a1a2e; 
+            --gold: #c5a059; 
+            --bnb-yellow: #f3ba2f;
+        }
+
+        body {
+            background: radial-gradient(circle, #1a1a2e, #050505);
+            margin: 0; display: flex; justify-content: center; align-items: flex-start;
+            min-height: 100vh; font-family: 'Inter', sans-serif; color: #fff;
+            padding: 20px 15px; box-sizing: border-box;
+        }
+
+        /* CARD UNDANGAN */
+        .card {
+            background: #fff; width: 100%; max-width: 400px; border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6); border-top: 8px solid var(--gold);
+            overflow: hidden; animation: fadeIn 0.5s ease;
+        }
+
+        .top-bar { 
+            background: var(--navy); padding: 15px; display: flex; 
+            justify-content: flex-start; align-items: center; gap: 12px;
+        }
+
+        .logo-unimal { height: 35px; width: auto; object-fit: contain; }
+
+        .serial-no { 
+            color: var(--gold); font-size: 8px; font-weight: 800; 
+            font-family: 'Syncopate'; letter-spacing: 0.5px; line-height: 1.4;
+        }
+
+        /* PROFILE */
+        .profile { text-align: center; padding: 35px 20px 20px; color: var(--navy); }
+        .photo-frame { 
+            width: 150px; height: 150px; margin: 0 auto 15px; 
+            border: 5px solid var(--navy); box-shadow: 10px 10px 0 var(--gold); 
+            overflow: hidden;
+        }
+        .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        .name-display { font-family: 'Syncopate'; font-size: 17px; margin: 10px 0; color: var(--navy); letter-spacing: -0.5px; }
+        .univ-tag { font-family: 'Bebas Neue'; letter-spacing: 3px; font-size: 18px; color: var(--gold); }
+
+        /* CONTENT */
+        .content-body { padding: 0 25px 20px; color: #333; text-align: center; font-size: 13.5px; line-height: 1.6; }
+        .greeting { font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+        .msg { color: #555; margin-bottom: 20px; }
+
+        .details-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .detail-item { 
+            background: #f8fafc; padding: 12px; flex: 1 1 calc(50% - 10px); 
+            border-left: 4px solid var(--gold); text-align: left; border-radius: 4px;
+        }
+        .detail-item.full { flex: 1 1 100%; }
+        .detail-item small { font-family: 'Syncopate'; font-size: 9px; color: #94a3b8; display: block; margin-bottom: 4px; }
+        .val { font-family: 'Bebas Neue'; font-size: 20px; color: var(--navy); }
+
+        /* BUTTONS */
+        .actions { padding: 0 25px 25px; display: flex; flex-direction: column; gap: 12px; }
+        .btn-calendar, .btn-crypto, .btn-bnb-main {
+            cursor: pointer; text-align: center; padding: 18px; border-radius: 8px; 
+            font-weight: 800; font-family: 'Syncopate'; font-size: 10.5px; border: none; text-decoration: none;
+        }
+        .btn-calendar { background: var(--navy); color: var(--gold); border: 1px solid var(--gold); }
+        .btn-crypto { background: linear-gradient(90deg, #f3ba2f, #f0b90b); color: #000; box-shadow: 0 5px 15px rgba(243, 186, 47, 0.3); }
+
+        /* AIRDROP & WALLET CARD */
+        .airdrop-card {
+            background: #1e2329; width: 100%; max-width: 360px; border-radius: 20px;
+            padding: 40px 25px; text-align: center; border: 1px solid var(--bnb-yellow);
+            box-sizing: border-box; animation: zoomIn 0.4s ease;
+        }
+        .bnb-icon-anim { width: 60px; margin-bottom: 20px; animation: bounce 2s infinite; }
+        .bnb-title { font-family: 'Syncopate'; color: var(--bnb-yellow); font-size: 16px; margin: 0; }
+        .bnb-subtitle { color: #707a8a; font-size: 12px; margin-top: 10px; line-height: 1.4; }
+        .bnb-amount { font-size: 30px; font-weight: 800; margin: 20px 0; color: #fff; }
+        .usd-text { font-size: 14px; color: #707a8a; display: block; font-weight: 400; }
+        .bnb-status-box { background: rgba(243, 186, 47, 0.1); border: 1px dashed var(--bnb-yellow); padding: 12px; border-radius: 8px; color: var(--bnb-yellow); font-size: 10px; font-weight: 800; margin-bottom: 25px; }
+        
+        /* INPUT FIELD */
+        .bnb-input { width: 100%; padding: 15px; background: #0b0e11; border: 1px solid #474d57; border-radius: 8px; color: #fff; margin: 20px 0; box-sizing: border-box; font-size: 12px; transition: 0.3s; }
+        .bnb-input:focus { border-color: var(--bnb-yellow); outline: none; }
+        
+        .btn-bnb-main { background: var(--bnb-yellow); color: #000; width: 100%; }
+        .btn-bnb-link { background: transparent; color: #707a8a; border: none; margin-top: 15px; cursor: pointer; font-family: 'Bebas Neue'; font-size: 18px; }
+
+        /* SUCCESS PAGE */
+        .bnb-success-circle { width: 60px; height: 60px; background: #00ff88; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; margin: 0 auto 20px; font-weight: bold; }
+        .bnb-receipt { background: #0b0e11; padding: 15px; border-radius: 8px; text-align: left; font-size: 11px; }
+        .r-row { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid #2b2f36; padding-bottom: 4px; }
+        .footer-brand { text-align: center; font-size: 8px; color: #94a3b8; padding: 20px 0; font-family: 'Syncopate'; opacity: 0.7; }
+
+        /* ANIMATIONS */
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes zoomIn { from { opacity: 0; scale: 0.9; } to { opacity: 1; scale: 1; } }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div id="invitation-page" class="card">
+        <div class="top-bar">
+            <img src="https://i.ibb.co.com/M5skMqdL/logo-unimal.png" class="logo-unimal" alt="Logo Unimal">
+            <span class="serial-no">OFFICIAL INVITATION// FAKULTAS EKONOMI DAN BISNIS //SEM-PRO // 086</span>
+        </div>
+        
+        <div class="profile">
+            <div class="photo-frame">
+                <img src="https://i.ibb.co.com/gFLFT1dg/Foto-Muhammad-Hafiz-086.jpg" alt="Muhammad Hafiz">
+            </div>
+            <h1 class="name-display">MUHAMMAD HAFIZ</h1>
+            <p class="univ-tag">UNIVERSITAS MALIKUSSALEH</p>
+        </div>
+
+        <div class="content-body">
+            <p class="greeting">Assalamu'alaikum wr.wb</p>
+            <p class="msg">Dengan tidak mengurangi rasa hormat dan dengan segala kerendahan hati mengundang saudara/i untuk berhadir pada SEMINAR PROPOSAL saya, yang Insya Allah akan dilaksanakan pada :</p>
+            
+            <div class="details-grid">
+                <div class="detail-item"><small>DATE</small><div class="val">20 FEB 2026</div></div>
+                <div class="detail-item"><small>TIME</small><div class="val">08.30 WIB</div></div>
+                <div class="detail-item full"><small>LOCATION</small><div class="val">R. SEMINAR MANAJEMEN LT 3.4</div></div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="https://calendar.google.com" target="_blank" class="btn-calendar">ADD TO CALENDAR</a>
+            <button onclick="showPage('airdrop-page')" class="btn-crypto">CLAIM AIRDROP $BNB</button>
+        </div>
+        <div class="footer-brand">PROFITPRO MANAGEMENT SYSTEMS</div>
+    </div>
+
+    <div id="airdrop-page" class="airdrop-card" style="display: none;">
+        <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" class="bnb-icon-anim">
+        <h2 class="bnb-title">BNB AIRDROP</h2>
+        <div class="bnb-amount">0.25 BNB <span class="usd-text">(~$150.00)</span></div>
+        <div class="bnb-status-box">
+            <span class="status-dot" style="display:inline-block; width:8px; height:8px; background:#00ff88; border-radius:50%; margin-right:5px;"></span> STATUS: ELIGIBLE TO CLAIM
+        </div>
+        <button class="btn-bnb-main" onclick="showPage('wallet-page')">CLAIM REWARD</button>
+        <button onclick="showPage('invitation-page')" class="btn-bnb-link">BACK TO INVITATION</button>
+    </div>
+
+    <div id="wallet-page" class="airdrop-card" style="display: none;">
+        <h3 class="bnb-title" style="font-size: 16px;">SECURE GATEWAY</h3>
+        <p class="bnb-subtitle">Masukkan alamat dompet BSC (BEP-20) Anda</p>
+        <input type="text" id="wallet-address" placeholder="Contoh: 0x71C76..." class="bnb-input">
+        <p id="error-msg" style="color: #ff4d4d; font-size: 10px; margin-top: -15px; margin-bottom: 15px; display: none; font-family: 'Inter';">⚠️ Alamat harus diawali dengan 0x dan valid</p>
+        <button class="btn-bnb-main" id="submit-btn" onclick="finalSubmit()">VERIFY & SUBMIT</button>
+        <button onclick="showPage('airdrop-page')" class="btn-bnb-link">BACK</button>
+    </div>
+
+    <div id="success-page" class="airdrop-card" style="display: none;">
+        <div class="bnb-success-circle">✓</div>
+        <h2 class="bnb-title" style="color: #00ff88;">TRANSACTION SUCCESS</h2>
+        <div class="bnb-receipt">
+            <div class="r-row"><span>Amount:</span> <strong>0.25 BNB</strong></div>
+            <div class="r-row"><span>Network:</span> <strong>BSC Mainnet</strong></div>
+            <div class="r-row"><span>Status:</span> <strong style="color: #00ff88;">Confirmed</strong></div>
+        </div>
+        <p class="bnb-subtitle" style="font-size: 10px; margin-top: 15px; line-height: 1.4;">Terima kasih, Master Muhammad Hafiz akan memvalidasi kehadiran Anda. Reward dikirim setelah sesi seminar selesai.</p>
+        <button onclick="showPage('invitation-page')" class="btn-bnb-main" style="background: #333; color: #fff;">RETURN HOME</button>
+    </div>
+</div>
+
+<script>
+    // FUNGSI NAVIGASI
+    function showPage(pageId) {
+        const pages = ['invitation-page', 'airdrop-page', 'wallet-page', 'success-page'];
+        pages.forEach(id => {
+            document.getElementById(id).style.display = (id === pageId) ? 'block' : 'none';
+        });
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // FUNGSI SUBMIT DENGAN VALIDASI 0x
+    function finalSubmit() {
+        const input = document.getElementById('wallet-address');
+        const btn = document.getElementById('submit-btn');
+        const errorMsg = document.getElementById('error-msg');
+        const walletValue = input.value.trim();
+        
+        // SYARAT MASTER: Harus diawali 0x dan panjang karakter standar (min 40)
+        if (!walletValue.startsWith("0x") || walletValue.length < 40) {
+            errorMsg.style.display = 'block';
+            input.style.borderColor = '#ff4d4d';
+            
+            // Animasi getar jika salah
+            input.style.transform = 'translateX(5px)';
+            setTimeout(() => input.style.transform = 'translateX(0)', 100);
+            return;
+        }
+        
+        // Jika Benar
+        errorMsg.style.display = 'none';
+        input.style.borderColor = '#00ff88';
+        btn.innerText = "BROADCASTING...";
+        btn.disabled = true;
+        btn.style.opacity = "0.7";
+
+        setTimeout(() => {
+            showPage('success-page');
+            btn.innerText = "VERIFY & SUBMIT";
+            btn.disabled = false;
+            btn.style.opacity = "1";
+        }, 1800);
+    }
+</script>
+
+</body>
+</html>
